@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\plugin">
+      <UniqueIdentifier>{8d5a3224-081d-45b3-84c1-5275bbb3b665}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component">
+      <UniqueIdentifier>{4df9f8b8-0dd8-4745-9177-0a0fb08aaa4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands">
+      <UniqueIdentifier>{bdd754da-1c28-4f0d-840d-ea5cd08f9c4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui">
+      <UniqueIdentifier>{d8ad5e51-df69-4c5a-84ba-9679b1015048}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\listener">
+      <UniqueIdentifier>{ecdf2862-76c5-48da-b9f4-8bc52c538144}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="game_plugin\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_plugin\PrecompiledHeader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game_plugin\plugin\Plugin.cpp">
+      <Filter>Source Files\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="game_plugin\component\StatusComponent.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
+    <ClCompile Include="game_plugin\commands\ShowStatusCommand.cpp">
+      <Filter>Source Files\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="game_plugin\gui\GuiManager.cpp">
+      <Filter>Source Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="game_plugin\gui\FMSGui.cpp">
+      <Filter>Source Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="game_plugin\listener\GameListener.cpp">
+      <Filter>Source Files\listener</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game_plugin\Export.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_plugin\PrecompiledHeader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_plugin\component\StatusComponent.h">
+      <Filter>Source Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="game_plugin\commands\ShowStatusCommand.h">
+      <Filter>Source Files\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="game_plugin\gui\GuiManager.h">
+      <Filter>Source Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="game_plugin\gui\FMSGui.h">
+      <Filter>Source Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="game_plugin\listener\GameListener.h">
+      <Filter>Source Files\listener</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="game_plugin\plugin\Plugin-inl.h">
+      <Filter>Source Files\plugin</Filter>
+    </None>
+    <None Include="game_plugin.pro" />
+    <None Include="game_plugin\plugin\Plugin.h">
+      <Filter>Source Files\plugin</Filter>
+    </None>
+  </ItemGroup>
+</Project>
