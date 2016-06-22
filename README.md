@@ -1,4 +1,4 @@
-## Status Plugin für Emergency 5
+# Status Plugin für Emergency 5
 
 Dieses Plugin erweitert Fahrzeuge um eine Statuskomponente und ein neues GUI
 um die Fahrzeugstatus zu setzen. Das GUI wird automatisch aufgerufen, wenn ein
@@ -12,7 +12,7 @@ Zuerst muss das Repository auf den eigenen Rechner geklont werden.
 git clone https://github.com/thetodd/em5_status.git
 ```
 
-Nun muss noch die datei sdk_directories.props angepasst werden. Dazu einfach im
+Nun muss noch die Datei **sdk_directories.props** angepasst werden. Dazu einfach im
 Ordner **build/visual_studio_property_sheets** die Datei **sdk_directories.props.example**
 umbenennen und das *.example* aus dem Dateinamen entfernen.
 
@@ -21,7 +21,7 @@ Entwicklungsumgebung anpassen.
 
 Danach kann das Projekt in Visual Studio geöffnet und erstellt werden.
 
-Über den World Editor kann Fahrzeugen die neue Komponente "flo11::StatusComponent"
+Über den World Builder kann Fahrzeugen die neue Komponente "flo11::StatusComponent"
 hinzugefügt werden.
 
 Der initiale Status kann dann unter den Object Properties geändert werden.

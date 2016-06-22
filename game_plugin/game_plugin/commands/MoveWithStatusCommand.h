@@ -10,9 +10,7 @@
 //[-------------------------------------------------------]
 //[ Includes                                              ]
 //[-------------------------------------------------------]
-#include "game_plugin/Export.h"
-
-#include <qsf/component/Component.h>
+#include "em5/command/Command.h"
 
 
 //[-------------------------------------------------------]
@@ -21,19 +19,14 @@
 namespace flo11
 {
 
-
 	//[-------------------------------------------------------]
 	//[ Classes                                               ]
 	//[-------------------------------------------------------]
 	/**
 	*  @brief
-	*    Indicator component
-	*
-	*  @remarks
-	*    This is a sample component that can be added to entities inside the editor.
-	*    It creates a colorful box around the entity.
+	*    EMERGENCY 5 arrest gangster command
 	*/
-	class GAMEPLUGIN_API_EXPORT StatusComponent : public qsf::Component
+	class MoveWithStatusCommand : public em5::Command
 	{
 
 
@@ -41,52 +34,45 @@ namespace flo11
 		//[ Public definitions                                    ]
 		//[-------------------------------------------------------]
 	public:
-		static const uint32 COMPONENT_ID;		///< "user::IndicatorComponent" unique component ID
+		static const uint32 PLUGINABLE_ID;	///< "em5::ArrestGangsterCommand" unique command pluginable ID
 
-
-		//[-------------------------------------------------------]
-		//[ Public methods                                        ]
-		//[-------------------------------------------------------]
+											//[-------------------------------------------------------]
+											//[ Public methods                                        ]
+											//[-------------------------------------------------------]
 	public:
 		/**
 		*  @brief
 		*    Constructor
-		*
-		*  @param[in] prototype
-		*    The prototype this component is in, no null pointer allowed
 		*/
-		StatusComponent(qsf::Prototype* prototype);
+		explicit MoveWithStatusCommand(qsf::game::CommandManager* commandManager);
 
-		/**
-		*  @brief
-		*    Destructor
-		*/
-		~StatusComponent();
+		bool checkCallerWithoutPriority(qsf::Entity& caller);
 
-		int getStatus();
-		void setStatus(int status);
-		int getOldStatus();
 
 		//[-------------------------------------------------------]
-		//[ Protected virtual qsf::Component methods              ]
+		//[ Public virtual em5::Command methods                   ]
 		//[-------------------------------------------------------]
+	public:
+		virtual bool checkAvailable() override;
+		bool checkCaller(qsf::Entity& caller) override;
+		virtual bool checkContext(const qsf::game::CommandContext& context) override;;
+		virtual void execute(const qsf::game::CommandContext& context) override;
+		glm::vec3 getPositionUnderMouse(qsf::Entity* caller);
+
+
+
+	public:
+
 	protected:
 		//[-------------------------------------------------------]
-		//[ Lifecycle                                             ]
-		//[-------------------------------------------------------]
-
-
-		//[-------------------------------------------------------]
-		//[ Private methods                                       ]
+		//[ Private definitions                                   ]
 		//[-------------------------------------------------------]
 	private:
-
-		//[-------------------------------------------------------]
-		//[ Private data                                          ]
-		//[-------------------------------------------------------]
+		static const uint32 ACTION_PRIORITY;
 	private:
-		int mStatusId;
-		int mOldStatusId;
+		qsf::Map*	mMap;
+		glm::vec3 OldMousePos;
+		em5::Command* origCommand;
 
 		//[-------------------------------------------------------]
 		//[ CAMP reflection system                                ]
@@ -100,15 +86,10 @@ namespace flo11
 	//[-------------------------------------------------------]
 	//[ Namespace                                             ]
 	//[-------------------------------------------------------]
-} // user
-
-
-  //[-------------------------------------------------------]
-  //[ Implementation                                        ]
-  //[-------------------------------------------------------]
+} // em5
 
 
   //[-------------------------------------------------------]
   //[ CAMP reflection system                                ]
   //[-------------------------------------------------------]
-QSF_CAMP_TYPE_NONCOPYABLE(flo11::StatusComponent)
+QSF_CAMP_TYPE_NONCOPYABLE(flo11::MoveWithStatusCommand)
