@@ -1,9 +1,3 @@
-// Copyright (C) 2012-2015 Promotion Software GmbH
-
-
-//[-------------------------------------------------------]
-//[ Includes                                              ]
-//[-------------------------------------------------------]
 #include "game_plugin/PrecompiledHeader.h"
 #include "game_plugin/listener/GameListener.h"
 #include "game_plugin/component/StatusComponent.h"
@@ -22,17 +16,8 @@
 
 #include <boost/bind.hpp>
 
-
-//[-------------------------------------------------------]
-//[ Namespace                                             ]
-//[-------------------------------------------------------]
 namespace flo11
 {
-
-
-	//[-------------------------------------------------------]
-	//[ Public methods                                        ]
-	//[-------------------------------------------------------]
 	GameListener::GameListener()
 	{
 		// Nothing here
@@ -46,14 +31,9 @@ namespace flo11
 
 	void GameListener::init()
 	{
-		// Register the message proxy to the life cycle messages. It is important to have the right time. Otherwise we would start our gamelogic in the main menu
 		mChangeSelectionMessageProxy.registerAt(qsf::MessageConfiguration(em5::Messages::EM5_CHANGE_SELECTION), boost::bind(&GameListener::selectionChanged, this, _1));
 	}
 
-
-	//[-------------------------------------------------------]
-	//[ Lifecycle                                             ]
-	//[-------------------------------------------------------]
 	void GameListener::selectionChanged(const qsf::MessageParameters& parameters)
 	{
 		QSF_LOG_PRINTS(INFO, "Selection changed...")
@@ -75,9 +55,4 @@ namespace flo11
 			}
 		}
 	}
-
-
-//[-------------------------------------------------------]
-//[ Namespace                                             ]
-//[-------------------------------------------------------]
-} // user
+}

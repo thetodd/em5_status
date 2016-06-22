@@ -7,40 +7,24 @@
 
 namespace flo11
 {
-    //[-------------------------------------------------------]
-    //[ Classes                                               ]
-    //[-------------------------------------------------------]
     /**
     *   @brief
     *   This class starts up and shuts down all gui related things at game
     *   startup and shutdown.
+	*
+	*   @author Florian 11-47-1
     */
     class GuiManager
     {
-
-
-        //[-------------------------------------------------------]
-        //[ Public definitions                                    ]
-        //[-------------------------------------------------------]
-    public:
-
-        //[-------------------------------------------------------]
-        //[ Public methods                                        ]
-        //[-------------------------------------------------------]
     public:
         GuiManager();
         ~GuiManager();
         void init();
-        //[-------------------------------------------------------]
-        //[ Private methods                                       ]
-        //[-------------------------------------------------------]
-    private:
 
+    private:
         void startup(const qsf::MessageParameters& parameters);
         void shutdown(const qsf::MessageParameters& parameters);
-        //[-------------------------------------------------------]
-        //[ Private data                                          ]
-        //[-------------------------------------------------------]
+
     private:
         qsf::MessageProxy		mStartupMessageProxy;
         qsf::MessageProxy		mShutdownMessageProxy;

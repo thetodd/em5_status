@@ -20,10 +20,6 @@
 #include <Rocket/Core/ElementDocument.h>
 #include <Rocket/Core/StringBase.h>
 
-#include <string>
-#include <stdio.h>
-#include <Windows.h>
-
 namespace flo11 {
 
 	FMSGui* FMSGui::instance = nullptr;
@@ -58,12 +54,6 @@ namespace flo11 {
 			Rocket::Core::Variant* statusAttr = btn->GetAttribute("data-status");
 			int status = 0;
 			statusAttr->GetInto(status);
-
-			std::string statusStr = "";
-			statusAttr->GetInto(statusStr);
-			//QSF_LOG_PRINTS(INFO, status)
-			//EM5_GUI.showModalMessageBox("Statuswechsel", "", "Ok");
-			//em5::HintHelper::showHint("Statuswechsel auf " + statusStr, 0, qsf::Time::fromSeconds(30.0f));
 
 			uint64 selectedEntityId = EM5_APPLICATION.getGame().getSelectionManager().getCurrentId();
 			qsf::Entity* qsfEntity = QSF_MAINMAP.getEntityById(selectedEntityId);

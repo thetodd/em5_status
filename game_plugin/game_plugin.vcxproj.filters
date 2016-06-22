@@ -34,9 +34,6 @@
     <ClCompile Include="game_plugin\component\StatusComponent.cpp">
       <Filter>Source Files\component</Filter>
     </ClCompile>
-    <ClCompile Include="game_plugin\commands\ShowStatusCommand.cpp">
-      <Filter>Source Files\commands</Filter>
-    </ClCompile>
     <ClCompile Include="game_plugin\gui\GuiManager.cpp">
       <Filter>Source Files\gui</Filter>
     </ClCompile>
@@ -59,9 +56,6 @@
     </ClInclude>
     <ClInclude Include="game_plugin\component\StatusComponent.h">
       <Filter>Source Files\component</Filter>
-    </ClInclude>
-    <ClInclude Include="game_plugin\commands\ShowStatusCommand.h">
-      <Filter>Source Files\commands</Filter>
     </ClInclude>
     <ClInclude Include="game_plugin\gui\GuiManager.h">
       <Filter>Source Files\gui</Filter>
