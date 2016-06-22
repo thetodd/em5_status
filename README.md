@@ -26,6 +26,12 @@ hinzugefügt werden.
 
 Der initiale Status kann dann unter den Object Properties geändert werden.
 
+## Elemente
+|Name|Typ|Beschreibung|
+|---|---|---|
+|flo11::StatusComponent|Komponente|Beinhaltet Logik und Speicherung des aktuelen Status eines Fahrzeugs. Sollte den Fahrzeugen als neue Komponente hinzugefügt werden.|
+|flo11::MoveWithStatusCommand|Command|MoveCommand mit Logik, dass Fahrzeuge sich nur in bestimmten Status bewegen können. Der Command ist deaktiv in Status 4 und 6.|
+
 ## Mitwirken
 
 Solltest Du Fehler beseitigt oder Verbesserungen am Code vorgenommen haben, bitten
