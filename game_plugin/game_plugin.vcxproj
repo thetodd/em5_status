@@ -106,7 +106,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="game_plugin\commands\MoveWithStatusCommand.cpp" />
-    <ClCompile Include="game_plugin\commands\ShowStatusCommand.cpp" />
     <ClCompile Include="game_plugin\component\StatusComponent.cpp" />
     <ClCompile Include="game_plugin\gui\FMSGui.cpp" />
     <ClCompile Include="game_plugin\gui\GuiManager.cpp" />
@@ -120,7 +119,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game_plugin\commands\MoveWithStatusCommand.h" />
-    <ClInclude Include="game_plugin\commands\ShowStatusCommand.h" />
     <ClInclude Include="game_plugin\component\StatusComponent.h" />
     <ClInclude Include="game_plugin\Export.h" />
     <ClInclude Include="game_plugin\gui\FMSGui.h" />

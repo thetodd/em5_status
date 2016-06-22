@@ -1,22 +1,19 @@
 #include "game_plugin/PrecompiledHeader.h"
 #include "game_plugin/gui/GuiManager.h"
 #include "game_plugin/gui/FMSGui.h"
+
 #include <em5/gui/IngameHud.h>
 #include <em5/gui/hud/BaseHudLayer.h>
 #include <em5/gui/EmergencyGui.h>
 #include <em5/EM5Helper.h>
 
-//[-------------------------------------------------------]
-//[ Namespace                                             ]
-//[-------------------------------------------------------]
 namespace flo11
 {
-    //[-------------------------------------------------------]
-    //[ Public methods                                        ]
-    //[-------------------------------------------------------]
+
     GuiManager::GuiManager():
         mContext(nullptr)
     {
+		//nothing to do here
     }
 
     GuiManager::~GuiManager()

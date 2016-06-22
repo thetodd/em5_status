@@ -5,6 +5,16 @@
 #include <qsf/audio/AudioManager.h>
 
 namespace flo11 {
+
+	/**
+	*  @brief
+	*    The ingame hud GUI to set the status of a vehicle.
+	*
+	*  @remarks
+	*    The RML source is in the folder "mod_files" and has to be copied to your mod.
+	*
+	*  @author Florian 11-47-1
+	*/
 	class FMSGui :
 		public qsf::GuiDocument
 	{
@@ -16,7 +26,6 @@ namespace flo11 {
 		virtual ~FMSGui();
 		static void init(qsf::GuiContext& guiContext);
 		static void shutdown();
-
 		virtual void processEvent(const std::string& eventKey, Rocket::Core::Event& event) override;
 
 	private:

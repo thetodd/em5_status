@@ -1,49 +1,30 @@
-// Copyright (C) 2012-2015 Promotion Software GmbH
-
-
-//[-------------------------------------------------------]
-//[ Includes                                              ]
-//[-------------------------------------------------------]
 #include "game_plugin/PrecompiledHeader.h"
 #include "game_plugin/plugin/Plugin.h"
 #include "game_plugin/component/StatusComponent.h"
 #include "game_plugin/commands/MoveWithStatusCommand.h"
 
-#include <qsf/log/LogSystem.h>
 #include <em5/plugin/version/PluginVersion.h>
 #include <em5/reflection/CampDefines.h>
-#include <qsf/map/Entity.h>
 
-//[-------------------------------------------------------]
-//[ Namespace                                             ]
-//[-------------------------------------------------------]
+#include <qsf_game/command/CommandManager.h>		// This is needed for commands; without this include, the build will work, but creation of commands fail
+#include <qsf/map/Entity.h>							// Needed to avoid "error C2664: cannot convert argument 1 from 'qsf::Entity *' to 'qsf::Prototype *' (game_plugin\plugin\Plugin.cpp)"
+
+
 namespace flo11
 {
 
-
-	//[-------------------------------------------------------]
-	//[ Public methods                                        ]
-	//[-------------------------------------------------------]
 	Plugin::Plugin() :
 		qsf::Plugin(new em5::PluginVersion())
 	{
-
-		// Show version string
-		//QSF_LOG_PRINT(INFO, "\n")
-		QSF_LOG_PRINTS(INFO, "----Loading plugin status_component----")
-		QSF_LOG_PRINTS(INFO, "    Built " __DATE__ ", " __TIME__)
+		QSF_LOG_PRINTS(INFO, "----Loading plugin status_component----");
+		QSF_LOG_PRINTS(INFO, "    Built " __DATE__ ", " __TIME__);
 	}
 
-
-	//[-------------------------------------------------------]
-	//[ Protected virtual qsf::Plugin methods                 ]
-	//[-------------------------------------------------------]
 	bool Plugin::onInstall()
 	{
 		try
 		{
 			// Declare CAMP reflection system classes
-
 			QSF_START_CAMP_CLASS_EXPORT(flo11::StatusComponent, "StatusComponent", "ID_USER_COMPONENT_INDICATOR_DESCRIPTION")
 				QSF_CAMP_IS_COMPONENT
 				QSF_ADD_CAMP_PROPERTY(Status, StatusComponent::getStatus, StatusComponent::setStatus, "The vehicles fms status", 2)
@@ -87,9 +68,4 @@ namespace flo11
 
 		// Nothing to do in here
 	}
-
-
-//[-------------------------------------------------------]
-//[ Namespace                                             ]
-//[-------------------------------------------------------]
-} // user
+}

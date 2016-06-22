@@ -1,42 +1,24 @@
-// Copyright (C) 2012-2015 Promotion Software GmbH
-
-
-//[-------------------------------------------------------]
-//[ Namespace                                             ]
-//[-------------------------------------------------------]
 namespace flo11
 {
 
-
-	//[-------------------------------------------------------]
-	//[ Public methods                                        ]
-	//[-------------------------------------------------------]
 	inline Plugin::~Plugin()
 	{
 		// Nothing to do in here
 	}
 
-
-	//[-------------------------------------------------------]
-	//[ Public virtual qsf::Plugin methods                    ]
-	//[-------------------------------------------------------]
 	inline const char* Plugin::getName() const
 	{
-		return "Status component plugin";	// Please replace with a better name
+		return "Status component plugin";
 	}
 
 	inline const char* Plugin::getVendor() const
 	{
-		return "Florian 11-47-1";	// Replace with your own name as author
+		return "Florian 11-47-1";
 	}
 
 	inline const char* Plugin::getDescription() const
 	{
-		return "Adds status components to vehicles.";	// Insert a plugin description here
+		return "Adds status components to vehicles.";
 	}
 
-
-//[-------------------------------------------------------]
-//[ Namespace                                             ]
-//[-------------------------------------------------------]
-} // user
+}
