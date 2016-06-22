@@ -18,6 +18,14 @@
 #include <em5/gui/EmergencyGui.h>
 #include <em5/EM5Helper.h>
 
+#include <em5/game/Game.h>
+#include <em5/application/Application.h>
+#include <em5/game/selection/SelectionManager.h>
+#include <qsf/Qsf.h>
+#include <qsf/map/Entity.h>
+#include <qsf/map/Map.h>
+#include <em5/command/component/CommandableComponent.h>
+
 
 //[-------------------------------------------------------]
 //[ Namespace                                             ]
@@ -58,8 +66,13 @@ namespace flo11
 		if (status >= 1 && status <= 6) {
 			mOldStatusId = this->getStatus();
 			mStatusId = status;
-			QSF_LOG_PRINTF(INFO, "Neuer Status %d", this->getStatus())
+			//QSF_LOG_PRINTF(INFO, "Neuer Status %d", this->getStatus());
 		}
+	}
+
+	int StatusComponent::getOldStatus()
+	{
+		return this->mOldStatusId;
 	}
 
 

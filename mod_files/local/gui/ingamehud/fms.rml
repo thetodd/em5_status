@@ -1,0 +1,75 @@
+<rml>
+	<head>
+		<link type="text/css" href="../asset/styles_hud.rcss" />
+		<style>
+			.fmsbody {
+				position: absolute;
+				right: 8px;
+				bottom: 290px;
+				width: 50px;
+				height: 360px; 
+				font-size: 12pt;
+				border-width: 1px;
+				border-color: #FFFFFF;
+				background-color: #121a21CC;
+				padding: 10px;
+			}
+			
+			.currentStatus {
+				font-weight: bold;
+				font-size: 15px;
+				text-align: center;
+			}
+			
+			.status1 {
+				background-color: #c9ea00cc;
+			}
+			.status2 {
+				background-color: #3bea00cc;
+			}
+			.status3 {
+				background-color: #ffd700cc;
+			}
+			.status4 {
+				background-color: #ea7c00cc;
+			}
+			.status5 {
+				background-color: #007deacc;
+			}
+			.status6 {
+				background-color: #bdc3c7cc;
+			}
+			
+			button {
+				display: inline-block;
+
+				/*width: 35px;
+				height: 35px;*/
+
+				margin: 5px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				/*vertical-align: -18px;*/
+
+				font-size: 20px;
+				font-weight: bold;
+				text-align: center;
+				tab-index: auto;
+				
+				border-width: 1px;
+				border-color: #ffffff;
+				border-style: solid;
+			}
+		</style>
+	</head>
+
+	<body onshow="showfms" class="fmsbody" nohoversound="true">
+		<p class="currentStatus">Status <span id="statusId">#</span></p>
+		<button class="status1" onclick="changeStatus" data-status="1">1</button>
+		<button class="status2" onclick="changeStatus" data-status="2">2</button>
+		<button class="status3" onclick="changeStatus" data-status="3">3</button>
+		<button class="status4" onclick="changeStatus" data-status="4">4</button>
+		<button class="status5" onclick="changeStatus" data-status="5">5</button>
+		<button class="status6" onclick="changeStatus" data-status="6">6</button>
+	</body>
+</rml>

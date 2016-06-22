@@ -7,6 +7,7 @@
 #include "game_plugin/PrecompiledHeader.h"
 #include "game_plugin/plugin/Plugin.h"
 #include "game_plugin/component/StatusComponent.h"
+#include "game_plugin/commands/MoveWithStatusCommand.h"
 
 #include <qsf/log/LogSystem.h>
 #include <em5/plugin/version/PluginVersion.h>
@@ -46,6 +47,10 @@ namespace flo11
 			QSF_START_CAMP_CLASS_EXPORT(flo11::StatusComponent, "StatusComponent", "ID_USER_COMPONENT_INDICATOR_DESCRIPTION")
 				QSF_CAMP_IS_COMPONENT
 				QSF_ADD_CAMP_PROPERTY(Status, StatusComponent::getStatus, StatusComponent::setStatus, "The vehicles fms status", 2)
+			QSF_END_CAMP_CLASS_EXPORT
+
+			QSF_START_CAMP_CLASS_EXPORT(flo11::MoveWithStatusCommand, "MoveWithStatusCommand", "Moves a vehicle according to the vehicle status id.")
+				QSF_GAME_CAMP_IS_COMMAND
 			QSF_END_CAMP_CLASS_EXPORT
 
 			// Done

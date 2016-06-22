@@ -69,7 +69,7 @@
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
       <AdditionalLibraryDirectories>$(QsfDir)external\_windows_$(PlatformTarget)\vld\lib;$(QsfDir)external\_windows_$(PlatformTarget)\boost\lib;$(QsfDir)external\_windows_$(PlatformTarget)\camp\lib;$(QsfDir)external\_windows_$(PlatformTarget)\tbb\lib;$(QsfDir)lib\$(PlatformTarget)r;$(EM5SdkDir)lib\$(PlatformTarget)r;..\lib\$(PlatformTarget);$(QsfDir)external\_windows_$(PlatformTarget)\librocket\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>camp.lib;qsf.lib;qsf_compositing.lib;qsf_ai.lib;qsf_editor_base.lib;qsf_editor.lib;qsf_game.lib;em5.lib;RocketCore.lib;RocketControls.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>camp.lib;qsf.lib;qsf_compositing.lib;qsf_ai.lib;qsf_editor_base.lib;qsf_editor.lib;qsf_game.lib;qsf_logic.lib;em5.lib;RocketCore.lib;RocketControls.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\lib\$(PlatformTarget)$(CfgExtension)\$(TargetName).lib</ImportLibrary>
     </Link>
     <PostBuildEvent />
@@ -105,6 +105,7 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="game_plugin\commands\MoveWithStatusCommand.cpp" />
     <ClCompile Include="game_plugin\commands\ShowStatusCommand.cpp" />
     <ClCompile Include="game_plugin\component\StatusComponent.cpp" />
     <ClCompile Include="game_plugin\gui\FMSGui.cpp" />
@@ -118,6 +119,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="game_plugin\commands\MoveWithStatusCommand.h" />
     <ClInclude Include="game_plugin\commands\ShowStatusCommand.h" />
     <ClInclude Include="game_plugin\component\StatusComponent.h" />
     <ClInclude Include="game_plugin\Export.h" />

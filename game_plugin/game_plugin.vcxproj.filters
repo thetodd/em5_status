@@ -46,6 +46,9 @@
     <ClCompile Include="game_plugin\listener\GameListener.cpp">
       <Filter>Source Files\listener</Filter>
     </ClCompile>
+    <ClCompile Include="game_plugin\commands\MoveWithStatusCommand.cpp">
+      <Filter>Source Files\commands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game_plugin\Export.h">
@@ -68,6 +71,9 @@
     </ClInclude>
     <ClInclude Include="game_plugin\listener\GameListener.h">
       <Filter>Source Files\listener</Filter>
+    </ClInclude>
+    <ClInclude Include="game_plugin\commands\MoveWithStatusCommand.h">
+      <Filter>Source Files\commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
